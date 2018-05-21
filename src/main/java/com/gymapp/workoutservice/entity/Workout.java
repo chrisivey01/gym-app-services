@@ -2,21 +2,30 @@ package com.gymapp.workoutservice.entity;
 
 import com.gymapp.workoutservice.enumeration.WorkoutType;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
 
 @Entity
 public class Workout {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
 
-    int week;
-    int weight;
-    int no_of_sets;
+    @Column(name = "type")
     WorkoutType type;
+
+    @Column(name = "set")
+    Sets set;
+
+    @Column(name = "reps")
+    Sets reps;
+
+    @Column(name = "weight")
+    Sets weight;
+
+
 
     public Integer getId() {
         return id;
@@ -26,30 +35,6 @@ public class Workout {
         this.id = id;
     }
 
-    public int getWeek() {
-        return week;
-    }
-
-    public void setWeek(int week) {
-        this.week = week;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
-    public int getNo_of_sets() {
-        return no_of_sets;
-    }
-
-    public void setNo_of_sets(int no_of_sets) {
-        this.no_of_sets = no_of_sets;
-    }
-
     public WorkoutType getType() {
         return type;
     }
@@ -57,5 +42,46 @@ public class Workout {
     public void setType(WorkoutType type) {
         this.type = type;
     }
+
+//    public List<Integer> getWeekList() {
+//        return weekList;
+//    }
+//
+//    public void setWeekList(List<Integer> weekList) {
+//        this.weekList = weekList;
+//    }
+//
+//    public List<String> getWeekDayList() {
+//        return weekDayList;
+//    }
+//
+//    public void setWeekDayList(List<String> weekDayList) {
+//        this.weekDayList = weekDayList;
+//    }
+
+//    public List<Integer> getSetList() {
+//        return setList;
+//    }
+//
+//    public void setSetList(List<Integer> setList) {
+//        this.setList = setList;
+//    }
+
+//    public int getReps() {
+//        return reps;
+//    }
+//
+//    public void setReps(int reps) {
+//        this.reps = reps;
+//    }
+//
+//    public int getWeight() {
+//        return weight;
+//    }
+//
+//    public void setWeight(int weight) {
+//        this.weight = weight;
+//    }
+
 
 }

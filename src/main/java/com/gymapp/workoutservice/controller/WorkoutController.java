@@ -1,6 +1,7 @@
 package com.gymapp.workoutservice.controller;
 
 
+import com.gymapp.workoutservice.entity.Sets;
 import com.gymapp.workoutservice.entity.Workout;
 import com.gymapp.workoutservice.repository.WorkoutRepository;
 import org.springframework.beans.factory.annotation.Autowired;
