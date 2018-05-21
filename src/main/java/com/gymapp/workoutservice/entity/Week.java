@@ -1,7 +1,11 @@
 package com.gymapp.workoutservice.entity;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
+@Entity
+@DiscriminatorValue("B")
 public class Week extends Workout{
     @Column(name = "week_list")
     int week;

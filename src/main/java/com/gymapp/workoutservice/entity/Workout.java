@@ -1,11 +1,12 @@
 package com.gymapp.workoutservice.entity;
 
+import com.gymapp.workoutservice.entity.Sets;
 import com.gymapp.workoutservice.enumeration.WorkoutType;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 
 @Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public class Workout {
 
 
@@ -16,16 +17,7 @@ public class Workout {
     @Column(name = "type")
     WorkoutType type;
 
-    @Column(name = "set")
-    Sets set;
-
-    @Column(name = "reps")
-    Sets reps;
-
-    @Column(name = "weight")
-    Sets weight;
-
-
+    //    @Column(name = "set")
 
     public Integer getId() {
         return id;
@@ -43,7 +35,10 @@ public class Workout {
         this.type = type;
     }
 
-//    public List<Integer> getWeekList() {
+
+
+
+    //    public List<Integer> getWeekList() {
 //        return weekList;
 //    }
 //
